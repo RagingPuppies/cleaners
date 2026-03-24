@@ -212,7 +212,7 @@
     <a href="#services" class="btn-outline">השירותים שלנו ↓</a>
   </div>
   <div class="hero-stats">
-    <div class="stat"><div class="stat-num">8,000+</div><div class="stat-label">לקוחות מרוצים</div></div>
+    <div class="stat"><div class="stat-num" id="customer-count"></div><div class="stat-label">לקוחות מרוצים</div></div>
     <div class="stat"><div class="stat-num">5 ק"מ</div><div class="stat-label">רדיוס משלוח</div></div>
     <div class="stat"><div class="stat-num">24 שע'</div><div class="stat-label">זמן טיפול</div></div>
   </div>
@@ -362,5 +362,13 @@
   </svg>
 </a>
 
+<script>
+  const base = 8000;
+  const startDate = new Date('2026-03-24');
+  const today = new Date();
+  const days = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
+  const count = base + (days * 2);
+  document.getElementById('customer-count').textContent = count.toLocaleString('he-IL') + '+';
+</script>
 </body>
 </html>
